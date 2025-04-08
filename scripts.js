@@ -1,13 +1,24 @@
-$.get("https://6f186305-ab26-4839-b806-380e3560e049.mock.pstmn.io/cupcakes.json", function(data){
+// $.get("https://6f186305-ab26-4839-b806-380e3560e049.mock.pstmn.io/cupcakes.json", function(data){
 
-    console.log(data);
+//     console.log(data);
+//     displayCupcakes(data);
+
+//     cupcakesCollection = data;
+
+// }, "json").fail(function(data){
+//     $("#cupcakes").empty();
+//     $("#cupcakes").append("<div>There was an issue with your request</div>");
+// });
+
+$.ajax({
+    url: "https://6f186305-ab26-4839-b806-380e3560e049.mock.pstmn.io/cupcakes.json",
+    method: "GET",
+    datatype: "json"
+}).done(function(data){
     displayCupcakes(data);
-
-    cupcakesCollection = data;
-
-}, "json").fail(function(data){
+}).fail(function(){
     $("#cupcakes").empty();
-    $("#cupcakes").append("<div>There was an issue with your request</div>");
+//     $("#cupcakes").append("<div>There was an issue with your request</div>");
 });
 
 $("#alpha").on("click", function(){
