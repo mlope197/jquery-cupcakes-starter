@@ -33,10 +33,10 @@ $("#zed").on("click", function(){
 //function to display cupcakes on the page
 function displayCupcakes(data){
     $("#cupcakes").empty();
-    let string = "";
+    let html = "";
     //iterate through cupcakes to build a string output
     for (let cupcake of data){
-        string +=
+        html +=
         `<section>
             <img src ="${cupcake.image}" alt="${cupcake.alt}">
             <h4>${cupcake.name}</h4>
@@ -47,5 +47,5 @@ function displayCupcakes(data){
             </section>`;
     }
 
-    $("#cupcakes").html(string);
+    $("#cupcakes").html(html);
 }
